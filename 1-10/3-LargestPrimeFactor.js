@@ -29,3 +29,4 @@ console.log(" result is " + largestPrimeFactor(13195));
 
 // argestPrimeFactor(13195) should return 29.
 // largestPrimeFactor(600851475143) should return 6857.
+// largestPrimeFactor(8) should return 2.
