@@ -18,10 +18,10 @@ What is the value of the first triangle number to have over n divisor
 
 */
 
-let divisibleTrianglenNumber = (n) => {
+let divisibleTriangleNumber = (n) => {
   // the first thing we want to do is generate our triangle numbers
   let currentTriangular = 0;
-  let count = ; // keeps track of triangular numbers that we have generated
+  let count = 0; // keeps track of triangular numbers that we have generated
   // infinite while, not recommended but ok in this case
   while (true) {
     // first iteration we'll have count going up from 0 to 1, then currentTriangular going from 0 to 1
@@ -32,14 +32,16 @@ let divisibleTrianglenNumber = (n) => {
     // a variable that counts the number of divisors
     let divisorCount = 0;
     let i;
-    for (i = 1; i < Math.sqrt(currentTriangular) i++) {
+    for (i = 1; i < Math.sqrt(currentTriangular); i++) {
       if (currentTriangular % i === 0) {
-        divisorCount = divisorCount + 2;
+        // we will try diving all the numbers between 1 and its square root
+        divisorCount = divisorCount + 2; // if successfully divided, we will increase the square root by root
         // for each factor that we find beneath the squareroot, we will also find one above the suareroot
       }
     }
     // this checks if the squareroot of the current triangular number is an interger
     if (Number.isInteger(Math.sqrt(currentTriangular))) {
+      // if suare root is a whole number
       divisorCount = divisorCount + 1;
     }
     console.log(
@@ -51,12 +53,13 @@ let divisibleTrianglenNumber = (n) => {
     );
 
     if (divisorCount > n) {
+      // if diviorCount is greater than n
       return currentTriangular;
     }
   }
 };
 
-console.log("result is " + divisibleTrianglenNumber(23));
+console.log("result is " + divisibleTriangleNumber(23));
 
 // divisibleTriangleNumber(167) should return 1385280.
 // divisibleTriangleNumber(23) should return 630.
